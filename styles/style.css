@@ -256,11 +256,8 @@ button {
   line-height: normal;
   text-transform: uppercase;
 
-  mix-blend-mode: hard-light;
-
   text-shadow: -1px 0 var(--color-background), 0 1px var(--color-background),
     1px 0 var(--color-background), 0 -1px var(--color-background);
-  opacity: 0.5;
 }
 
 @supports (
@@ -291,8 +288,6 @@ button {
   display: flex;
   margin-block-start: 60px;
   margin-block-end: 105px;
-
-  background-color: transparent;
 
   color: var(--color-accent);
 
