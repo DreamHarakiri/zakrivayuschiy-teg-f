@@ -4,3 +4,40 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+
+:root.theme-dark {
+  --color-background: #000;
+  --color-accent: #00cc14;
+  --font-wg-main: 465;
+  --font-wg-title: 785;
+  --color-button-hover: #00cc14;
+  --color-heart-contour: #00cc14;
+  --gradient-background: repeating-linear-gradient(
+      to bottom,
+      #000 0 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(to right, #000 0 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #007f0c, #004306);
+}
+
+:root.theme-light {
+  --font-fm-main: "Inter", sans-serif;
+  --font-fm-accent: "PressStart2P", cursive;
+  --font-wg-main: 400;
+  --font-wg-title: 700;
+  --font-sz-main: 1.125rem;
+  --color-background: #fff;
+  --color-accent: #000;
+  --color-button-hover: #fff;
+  --color-heart-contour: #000;
+  --color-heart-main: red;
+  --color-heart-core: #fff;
+  --gradient-background: repeating-linear-gradient(
+      to bottom,
+      #d3d3d3 0 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+}

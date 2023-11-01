@@ -12,3 +12,118 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+@keyframes arrow {
+  0% {
+    translate: -19px 0;
+  }
+  100% {
+    translate: -23px 0;
+  }
+}
+
+@keyframes hScale {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.5;
+  }
+}
+
+@keyframes sparks-appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.contour {
+  fill: var(--color-heart-contour);
+  transition: fill 0.3s ease;
+  transition-delay: 0.06s;
+}
+
+.main-body {
+  fill: var(--color-accent);
+  opacity: 0;
+  transition: opacity 0.3s ease, fill 0.3s ease;
+}
+
+.core {
+  fill: var(--color-accent);
+  opacity: 0;
+  transition: opacity 0.3s ease, fill 0.3s ease;
+  transition-delay: 0.03s;
+}
+
+.sparks {
+  fill: var(--color-heart-main);
+  opacity: 0;
+}
+
+.card__icon-button:hover .main-body {
+  opacity: 1;
+  fill: var(--color-accent);
+  transition: opacity 0.3s ease, fill 0.3s ease;
+  transition-delay: 0.05s;
+}
+
+.card__icon-button:hover .core {
+  opacity: 1;
+  fill: var(--color-accent);
+  transition: opacity 0.3s ease, fill 0.3s ease;
+}
+
+.card__icon-button:active .main-body {
+  opacity: 1;
+  fill: var(--color-heart-main);
+  transition: opacity 0.3s ease, fill 0.3s ease;
+  transition-delay: 0.05s;
+}
+
+.card__icon-button:active .core {
+  opacity: 1;
+  fill: var(--color-heart-main);
+  transition: opacity 0.3s ease, fill 0.3s ease;
+}
+
+.like-icon.is-liked .main-body {
+  opacity: 1;
+  fill: var(--color-heart-main);
+  transition: opacity 0.3s ease, fill 0.3s ease;
+  transition-delay: 0.05s;
+}
+
+.like-icon.is-liked .core {
+  opacity: 1;
+  fill: var(--color-heart-main);
+  transition: opacity 0.3s ease, fill 0.3s ease;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--color-heart-main);
+  transition: fill 0.1s ease;
+}
+
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation: hScale 0.3s alternate ease-in;
+  animation-delay: 0.1s;
+}
+
+.like-icon.is-liked .sparks {
+  transform-origin: center;
+  animation: sparks-appear 0.3s alternate ease-in;
+  animation-delay: 0.3s;
+}
+
+/* 
+  да господи как это сделать етить его ааоаоаоаоаоаоаоаоаоааоа
+  Я больше никогда в жизни не буду заниматься анимациями, я хочу плакать и к маме
+  Нет, серьезно, я потратил на это миллиард своего времени, несколько раз перечитал материал, 
+  взял больничный на работе, расстался с девушкой, прошел все стадии принятия, разобрался в себе, излечился от осенней депрессии 
+  и вообще вырос в своем внутреннем мире, но анимацию так и не принял, надеюсь, что больше я с таким не столкнусь, больше спасибо.
+*/
