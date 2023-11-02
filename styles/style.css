@@ -54,6 +54,10 @@ button {
   font-weight: 400;
 }
 
+.header__title a {
+  text-decoration: none;
+}
+
 .header__description {
   font-size: clamp(0.875rem, 0.6768rem + 0.8458vw, 1.438rem);
   text-transform: uppercase;
@@ -123,6 +127,7 @@ button {
 
 .theme-menu__button:hover {
   opacity: 0.6;
+  transition: 0.3s ease;
 }
 
 /* main */
@@ -161,7 +166,6 @@ button {
   padding-top: 5px;
   padding-bottom: 5px;
   font-style: normal;
-  font-weight: 785;
   font-variation-settings: "wght" var(--font-wg-title);
   line-height: normal;
   background-color: var(--color-background);
@@ -175,7 +179,7 @@ button {
   font-family: var(--main-font);
   font-size: 18px;
   font-style: normal;
-  font-weight: 465;
+  font-variation-settings: "wght" var(--font-wg-main);
   line-height: 21px;
 
   display: flex;
@@ -218,28 +222,6 @@ button {
 .containerOnLikes:focus-visible {
   box-shadow: 2px 2px 0px 0px black;
   outline: none;
-}
-
-.card__like-button::after {
-  position: absolute;
-
-  content: "";
-  inset: 0;
-
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s ease-in-out;
-  background-color: var(--color-accent);
-}
-
-.card__like-button span {
-  position: relative;
-  z-index: 2;
-  mix-blend-mode: difference;
-}
-
-.card__like-button:hover::after {
-  transform: scaleX(1);
 }
 
 .label__layer {
@@ -289,8 +271,6 @@ button {
   margin-block-start: 60px;
   margin-block-end: 105px;
 
-  color: var(--color-accent);
-
   font-family: var(--accent-font);
   font-size: 14px;
   font-style: normal;
@@ -300,6 +280,8 @@ button {
 
   transition: box-shadow 0.3s ease;
   background-color: var(--color-background);
+
+  position: relative;
 }
 
 .positionIconOnLikes {
@@ -364,7 +346,6 @@ button {
   border: 2px solid var(--color-accent);
   background: var(--color-background);
 
-  color: var(--color-accent);
   font-family: var(--accent-font);
   font-size: 14px;
   font-style: normal;
@@ -388,8 +369,16 @@ button {
   text-align: center;
 }
 
-.discetIcon {
+.discetIconButton {
   fill: var(--color-accent);
+  width: 21px;
+  height: 21px;
+}
+
+.discetIconSaveOnDialog {
+  color: var(--color-accent);
+  width: 39px;
+  height: 39px;
 }
 
 @media (width <= 375px) {
@@ -429,41 +418,73 @@ button {
   }
 
   .discetIconMobile {
-    width: 39px;
-    height: 39px;
-    margin-block-end: 15px;
+    scale: 1.4;
+    margin-block-start: 15px;
+    margin-block-end: 8px;
+  }
+
+  .dialog-window button {
+    width: 257px;
   }
 }
 
-.firstPage {
+.container__card:nth-child(1) .image__layer-card {
   filter: saturate(1.7);
 }
 
-.secondPage {
+.container__card:nth-child(2) .image__layer-card {
   filter: sepia(1);
 }
 
-.thirdPage {
+.container__card:nth-child(3) .image__layer-card {
   filter: brightness(1.1);
 }
 
-.fourthPage {
+.container__card:nth-child(4) .image__layer-card {
   filter: contrast(0.8);
 }
 
-.fifthPage {
+.container__card:nth-child(5) .image__layer-card {
   filter: hue-rotate(-25deg);
 }
 
-.sixthPage {
+.container__card:nth-child(6) .image__layer-card {
   filter: invert(1) blur(3px);
 }
 
-.seventhPage {
+.container__card:nth-child(7) .image__layer-card {
   filter: grayscale(0.5);
 }
 
-.eighthPage {
+.container__card:nth-child(8) .image__layer-card {
   filter: sepia(1);
 }
 /**/
+
+.decorationButton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.decorationButton:hover::after {
+  transform: scaleX(1);
+}
+
+.decorationButton span {
+  position: relative;
+  z-index: 2;
+  color: var(--color-button-hover);
+}
+
+.decorationButton * {
+  mix-blend-mode: difference;
+}
+
+.dialog__button {
+  position: relative;
+}
